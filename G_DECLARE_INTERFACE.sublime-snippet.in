@@ -1,0 +1,13 @@
+m4_include(`macros.m4')
+<snippet>
+    <content><![CDATA[
+#define ${1:MY}_TYPE_${2:INTERFACE} ${1/to_lower}_${2/to_lower}_get_type ()
+G_DECLARE_INTERFACE (${1/to_title_case}${2/to_title_case}, ${1/to_lower}_${2/to_lower}, $1, $2, ${3:GObject})
+
+struct _${1/to_title_case}${2/to_title_case}Interface
+{
+    GTypeInterface g_iface;
+};
+]]></content>
+    <scope>source.c | source.c++</scope>
+</snippet>

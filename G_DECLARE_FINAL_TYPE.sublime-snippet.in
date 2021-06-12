@@ -1,0 +1,8 @@
+m4_include(`macros.m4')
+<snippet>
+    <content><![CDATA[
+#define ${1:MY}_TYPE_${2:OBJECT} ${1/to_lower}_${2/to_lower}_get_type ()
+G_DECLARE_FINAL_TYPE (${1/to_title_case}${2/to_title_case}, ${1/to_lower}_${2/to_lower}, $1, $2, ${3:GObject})
+]]></content>
+    <scope>source.c | source.c++</scope>
+</snippet>
