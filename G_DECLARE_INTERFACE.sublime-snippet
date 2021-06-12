@@ -1,10 +1,9 @@
-<!-- This snippet is generated from G_DECLARE_INTERFACE.sublime-snippet.in -->
 <snippet>
     <content><![CDATA[
-#define ${1:MY}_TYPE_${2:INTERFACE} ${1/to_lower}_${2/to_lower}_get_type ()
-G_DECLARE_INTERFACE (${1/(?:^|(?<underscore>_))(?<word>[[:alnum:]]+)(?=$|_)/\L\u$+{word}\E/g}${2/(?:^|(?<underscore>_))(?<word>[[:alnum:]]+)(?=$|_)/\L\u$+{word}\E/g}, ${1/(?:^|(?<underscore>_))(?<word>[[:alnum:]]+)(?=$|_)/$+{underscore}\L$+{word}\E/g}_${2/(?:^|(?<underscore>_))(?<word>[[:alnum:]]+)(?=$|_)/$+{underscore}\L$+{word}\E/g}, $1, $2, ${3:GObject})
+#define ${1:MY}_TYPE_${2:IFACE} ${1/./\l$&/g}_${2/./\l$&/g}_get_type ()
+G_DECLARE_FINAL_TYPE (${3:MyIface}, ${1/./\l$&/g}_${2/./\l$&/g}, $1, $2, ${4:GObject})
 
-struct _${1/(?:^|(?<underscore>_))(?<word>[[:alnum:]]+)(?=$|_)/\L\u$+{word}\E/g}${2/(?:^|(?<underscore>_))(?<word>[[:alnum:]]+)(?=$|_)/\L\u$+{word}\E/g}Interface
+struct _${3}Interface
 {
     GTypeInterface g_iface;
 };
